@@ -133,7 +133,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dependencies.h" />
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="Init.h" />
+    <ClInclude Include="Update.h" />
     <ClInclude Include="Utills.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

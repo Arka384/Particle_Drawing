@@ -1,16 +1,17 @@
 
-/*
-	add global toggle flags for second level buttons 
-*/
-
 #include "Utills.h"
-#include "Dependencies.h"
+#include "Init.h"
+#include "Update.h"
+#include "Draw.h"
+
 
 int main()
 {
 	RenderWindow window(VideoMode(1366, 786), "Test", Style::Close);
 	init_level_1_buttons();
-	init_level_2_buttons();
+	init_BS_Buttons();
+	init_BG_Buttons();
+	init_Tool_Buttons();
 	font.loadFromFile("font.ttf");
 
 	while (window.isOpen())
@@ -38,17 +39,27 @@ int main()
 			particles.clear();
 
 		update_level_1_buttons();
+		if(BS_flag == 1)
+			update_BS_Buttons();
+		if(BG_flag == 1)
+			update_BG_Buttons();
+		if (Tool_flag == 1)
+			update_Tool_Buttons();
 
 
 
 		//draw functions
 
-		window.clear();
+		window.clear(Background_color);
 
 		draw_particles(window);
 		draw_level_1_buttons(window);
 		if (BS_flag == 1)
-			draw_level_2_buttons(window);
+			draw_BS_Buttons(window);
+		if (BG_flag == 1)
+			draw_BG_Buttons(window);
+		if (Tool_flag == 1)
+			draw_Tool_Buttons(window);
 
 		window.display();
 

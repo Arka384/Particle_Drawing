@@ -23,7 +23,13 @@
     <ClInclude Include="Utills.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dependencies.h">
+    <ClInclude Include="Draw.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Init.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Update.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
