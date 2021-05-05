@@ -3,17 +3,16 @@
 #include "Utills.h"
 
 void update_level_1_buttons(void);
-void update_BS_Buttons(void);
 void update_BG_Buttons(void);
 void update_Tool_Buttons(void);
 
 void update_level_1_buttons(void)
 {
 	//clear the hot[]
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 3; i++)
 		hot[i] = 0;
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		level_1_buttons[i].setFillColor(Color(128, 128, 128, 255));
 
@@ -29,9 +28,6 @@ void update_level_1_buttons(void)
 				h_index = 2;
 				break;
 			case 2:
-				h_index = 3;
-				break;
-			case 3:
 			default:
 				break;
 			}
@@ -41,9 +37,6 @@ void update_level_1_buttons(void)
 			sleep(milliseconds(100));
 			switch (h_index)
 			{
-			case 3:
-				h_index = 2;
-				break;
 			case 2:
 				h_index = 1;
 				break;
@@ -61,6 +54,9 @@ void update_level_1_buttons(void)
 		if (hot[i] == 1)
 			level_1_buttons[i].setFillColor(Color(220, 20, 60, 255));
 
+		//std::cout << "BG = " << BG_flag << "\n";
+		//std::cout << "T = " << Tool_flag << "\n";
+
 		if (hot[i] && Keyboard::isKeyPressed(Keyboard::Enter))
 		{
 			// toggle second level button flags from here
@@ -69,24 +65,18 @@ void update_level_1_buttons(void)
 			switch (i)
 			{
 			case 0:
-				if (BS_flag == 0)
-					BS_flag = 1;
-				else
-					BS_flag = 0;
-				break;
-			case 1:
 				if (BG_flag == 0)
 					BG_flag = 1;
 				else
 					BG_flag = 0;
 				break;
-			case 2:
+			case 1:
 				if (Tool_flag == 0)
 					Tool_flag = 1;
 				else
 					Tool_flag = 0;
 				break;
-			case 3:
+			case 2:
 				particles.clear();
 				break;
 			default:
@@ -96,36 +86,11 @@ void update_level_1_buttons(void)
 
 		//if buttons are not hot then toggle off
 		if (hot[0] == 0)
-			BS_flag = 0;
-		if (hot[1] == 0)
 			BG_flag = 0;
-		if (hot[2] == 0)
+		if (hot[1] == 0)
 			Tool_flag = 0;
 	}
 
-}
-
-void update_BS_Buttons(void)
-{
-	for (int i = 0; i < 2; i++)
-	{
-		Brush_Size_button[i].setFillColor(Color(128, 128, 128, 255));
-		int hot = mx > Brush_Size_button[i].getPosition().x && mx < Brush_Size_button[i].getPosition().x + 70 &&
-			my > Brush_Size_button[i].getPosition().y && my < Brush_Size_button[i].getPosition().y + 40;
-
-		if (hot)
-			Brush_Size_button[i].setFillColor(Color::Blue);
-
-		if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
-		{
-			sleep(milliseconds(50));
-			particles.pop_back();
-			if (i == 0)
-				BrushSize++;
-			if (i == 1)
-				BrushSize--;
-		}
-	}
 }
 
 void update_BG_Buttons(void)
@@ -140,11 +105,18 @@ void update_BG_Buttons(void)
 
 	for (int i = 0; i < 2; i++)
 	{
+		Background_col_button[i].setSize(Vector2f(30, 30));
+		Background_col_button[i].setPosition(1275, i * 50 + 30);
+
 		int hot = mx > Background_col_button[i].getPosition().x && mx < Background_col_button[i].getPosition().x + 30 &&
 			my > Background_col_button[i].getPosition().y && my < Background_col_button[i].getPosition().y + 30;
 
 		if (hot)
-			Background_col_button[i].setOutlineColor(Color(0, 0, 205, 255));
+		{
+			Background_col_button[i].setPosition(1270, i * 50 + 25);
+			Background_col_button[i].setSize(Vector2f(40, 40));
+		}
+			
 
 		if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
 		{
@@ -254,5 +226,51 @@ void update_Tool_Buttons(void)
 		}
 	}
 
+	//update for Eraser button
+	Eraser.setSize(Vector2f(100, 30));
+	Eraser.setPosition(1245, 20);
+	Eraser.setOutlineColor(Outline_color);
 
+	int hot = mx > Eraser.getPosition().x && mx < Eraser.getPosition().x + 100 &&
+		my > Eraser.getPosition().y && my < Eraser.getPosition().y + 30;
+
+	if (hot)
+	{
+		Eraser.setPosition(1240, 15);
+		Eraser.setSize(Vector2f(110, 40));
+	}
+
+	if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
+	{
+		sleep(milliseconds(50));
+		particles.pop_back();
+		Particle_color = Background_color;
+	}
+
+	//updating the Brush Size button
+	for (int i = 0; i < 2; i++)
+	{
+		Brush_Size_button[i].setSize(Vector2f(60, 30));
+		Brush_Size_button[i].setPosition(1268, i * 50 + 350);
+		Brush_Size_button[i].setOutlineColor(Outline_color);
+
+		int hot = mx > Brush_Size_button[i].getPosition().x && mx < Brush_Size_button[i].getPosition().x + 60 &&
+			my > Brush_Size_button[i].getPosition().y && my < Brush_Size_button[i].getPosition().y + 30;
+
+		if (hot)
+		{
+			Brush_Size_button[i].setPosition(1265, i * 50 + 347);
+			Brush_Size_button[i].setSize(Vector2f(65, 35));
+		}
+
+		if (hot && Mouse::isButtonPressed(Mouse::Button::Left))
+		{
+			sleep(milliseconds(50));
+			particles.pop_back();
+			if (i == 0)
+				BrushSize++;
+			if (i == 1)
+				BrushSize--;
+		}
+	}
 }
