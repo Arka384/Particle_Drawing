@@ -247,11 +247,12 @@ void update_Tool_Buttons(void)
 		Particle_color = Background_color;
 	}
 
+
 	//updating the Brush Size button
 	for (int i = 0; i < 2; i++)
 	{
 		Brush_Size_button[i].setSize(Vector2f(60, 30));
-		Brush_Size_button[i].setPosition(1268, i * 50 + 350);
+		Brush_Size_button[i].setPosition(1268, i * 100 + 350);
 		Brush_Size_button[i].setOutlineColor(Outline_color);
 
 		int hot = mx > Brush_Size_button[i].getPosition().x && mx < Brush_Size_button[i].getPosition().x + 60 &&
@@ -259,7 +260,7 @@ void update_Tool_Buttons(void)
 
 		if (hot)
 		{
-			Brush_Size_button[i].setPosition(1265, i * 50 + 347);
+			Brush_Size_button[i].setPosition(1265, i * 100 + 347);
 			Brush_Size_button[i].setSize(Vector2f(65, 35));
 		}
 
@@ -273,4 +274,15 @@ void update_Tool_Buttons(void)
 				BrushSize--;
 		}
 	}
+
+	//for bursh preview
+	brush.setFillColor(Particle_color);
+	brush.setRadius(BrushSize);
+	int x = (Brush_Size_button[0].getPosition().x + (Brush_Size_button[0].getGlobalBounds().width / 2)) - brush.getRadius();
+	int y = (Brush_Size_button[0].getPosition().y + Brush_Size_button[0].getGlobalBounds().height);
+		y = y - (y - Brush_Size_button[1].getPosition().y)/2;
+		y = y - brush.getRadius();
+
+	brush.setPosition(x, y);
+
 }

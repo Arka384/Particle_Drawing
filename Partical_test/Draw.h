@@ -34,6 +34,7 @@ void draw_Tool_Buttons(RenderWindow &thisWindow)
 {
 	thisWindow.draw(Eraser);
 	thisWindow.draw(Eraser_text);
+	thisWindow.draw(brush);
 	for (int i = 0; i < 18; i++)
 		thisWindow.draw(Brush_Colors[i]);
 

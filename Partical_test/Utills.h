@@ -18,6 +18,7 @@ int h_index = 0;
 float mx, my;
 float BrushSize = 5.f;	//by default 5
 std::list <CircleShape> particles; //Global list for particles
+CircleShape brush;
 Font font;
 
 Color Background_color = Color::White;

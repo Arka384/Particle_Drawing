@@ -57,18 +57,20 @@ void init_Tool_Buttons(void)
 	int xpos = 1271;	//initial positions
 	int ypos = 40;
 
+	//brush initialization and updates are in updates.h
+
 	//Brush Size buttons
 	Brush_Size_button_text[0].setString("+");
-	Brush_Size_button_text[0].setPosition(1280, 330);
+	Brush_Size_button_text[0].setPosition(1282, 330);
 	Brush_Size_button_text[1].setString("-");
-	Brush_Size_button_text[1].setPosition(1287, 376);
+	Brush_Size_button_text[1].setPosition(1289, 426);
 	for (int i = 0; i < 2; i++)
 	{
 		Brush_Size_button[i].setOutlineThickness(3.f);
 		Brush_Size_button[i].setFillColor(Color(192, 192, 192, 255));
 		Brush_Size_button[i].setOutlineColor(Outline_color);
 		Brush_Size_button[i].setSize(Vector2f(60, 30));
-		Brush_Size_button[i].setPosition(1268, i * 50 + 350);
+		Brush_Size_button[i].setPosition(1268, i * 100 + 350);
 		Brush_Size_button_text[i].setFont(font);
 		Brush_Size_button_text[i].setCharacterSize(55);
 		Brush_Size_button_text[i].setFillColor(Color::Black);
