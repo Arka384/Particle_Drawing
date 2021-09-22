@@ -1,22 +1,22 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Partical_test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\init.h(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\init.h(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\init.h(50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\init.h(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\init.h(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\update.h(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\update.h(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\update.h(254): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\update.h(262): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\main.cpp(31): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\init.h(34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\init.h(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\init.h(50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\init.h(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\init.h(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\update.h(109): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\update.h(116): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\update.h(254): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\update.h(262): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\main.cpp(43): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int
           ]
-c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\partical_test\partical_test\main.cpp(32): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+c:\users\arkad\documents\deadshot files\c++ programs\sfml\tests\particle_drawing\partical_test\main.cpp(44): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=int
           ]
-  Partical_test.vcxproj -> C:\Users\arkad\Documents\DEADSHOT FILES\C++ Programs\SFML\TESTS\Partical_test\Debug\Partical_Drawing.exe
+  Partical_test.vcxproj -> C:\Users\arkad\Documents\DEADSHOT FILES\C++ Programs\SFML\TESTS\Particle_Drawing\Debug\Partical_Drawing.exe

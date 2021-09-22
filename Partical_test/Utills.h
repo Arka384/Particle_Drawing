@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <list>
 #include <time.h>
 #define SIZE 1	//draws this muh particles at once
